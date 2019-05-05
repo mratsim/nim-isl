@@ -48,11 +48,25 @@ cOverride:
     isl_id {.importc, header: cHeaderPath & "id_type.h".} = object
     isl_val {.importc, header: cHeaderPath & "val_type.h".} = object
     isl_mat {.importc, header: cHeaderPath & "mat.h".} = object
+    isl_id_list {.importc, header: cHeaderPath & "list.h".} = object
+    isl_ast_expr {.importc, header: cHeaderPath & "ast_type.h".} = object
+    isl_ast_node {.importc, header: cHeaderPath & "ast_type.h".} = object
+    isl_schedule {.importc, header: cHeaderPath & "schedule_type.h".} = object
+    isl_union_map* {.importc, header: cHeaderPath & "union_map_type.h".} = object
+    isl_ast_expr_list {.importc, header: cHeaderPath & "ast_type.h".} = object
+    isl_ast_expr_type {.importc, header: cHeaderPath & "ast_type.h".} = object
+    isl_ast_node_list {.importc, header: cHeaderPath & "ast_type.h".} = object
+    isl_ast_node_type {.importc, header: cHeaderPath & "ast_type.h".} = object
+    isl_id_to_ast_expr {.importc, header: cHeaderPath & "ast_type.h".} = object
+    isl_ast_expr_op_type {.importc, header: cHeaderPath & "ast_type.h".} = object
+    isl_ast_print_options {.importc, header: cHeaderPath & "ast_type.h".} = object
 
 # Nim interface
 cImport(cHeaderPath & "ctx.h", false)
 cImport(cHeaderPath & "map.h", false)
 cImport(cHeaderPath & "set.h", false)
+cImport(cHeaderPath & "ast_build.h", false)
+cImport(cHeaderPath & "ast.h", false)
 
 # See Makefile.am
 # Multiprecision

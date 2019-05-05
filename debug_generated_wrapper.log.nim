@@ -1,11 +1,12 @@
-{.passC: "-Ipath/to/nim-isl/isl".}
 
-{.passC: "-Ipath/to/nim-isl/isl/include".}
+{.passC: "-I/path/to/nim-isl/isl".}
 
-{.passC: "-Ipath/to/nim-isl/isl/imath_wrap".}
-Overriding isl_options isl_args isl_map isl_basic_map isl_set_type isl_set isl_basic_set isl_map_list isl_basic_map_list isl_set_list isl_basic_set_list isl_aff_list isl_dim_type isl_space isl_printer isl_pw_aff isl_pw_multi_aff isl_multi_pw_aff isl_multi_aff isl_aff isl_point isl_fixed_box isl_local_space isl_stride_info isl_id isl_val isl_mat
-# Importing path/to/nim-isl/isl/include/isl/ctx.h
-# <USER>/.nimble/pkgs/nimterop-0.1.0/nimterop/toast --pnim --preprocess --includeDirs+=path/to/nim-isl/isl --includeDirs+=path/to/nim-isl/isl/include --includeDirs+=path/to/nim-isl/isl/imath_wrap --symOverride=isl_options,isl_args,isl_map,isl_basic_map,isl_set_type,isl_set,isl_basic_set,isl_map_list,isl_basic_map_list,isl_set_list,isl_basic_set_list,isl_aff_list,isl_dim_type,isl_space,isl_printer,isl_pw_aff,isl_pw_multi_aff,isl_multi_pw_aff,isl_multi_aff,isl_aff,isl_point,isl_fixed_box,isl_local_space,isl_stride_info,isl_id,isl_val,isl_mat path/to/nim-isl/isl/include/isl/ctx.h
+{.passC: "-I/path/to/nim-isl/isl/include".}
+
+{.passC: "-I/path/to/nim-isl/isl/imath_wrap".}
+Overriding isl_options isl_args isl_map isl_basic_map isl_set_type isl_set isl_basic_set isl_map_list isl_basic_map_list isl_set_list isl_basic_set_list isl_aff_list isl_dim_type isl_space isl_printer isl_pw_aff isl_pw_multi_aff isl_multi_pw_aff isl_multi_aff isl_aff isl_point isl_fixed_box isl_local_space isl_stride_info isl_id isl_val isl_mat isl_id_list isl_ast_expr isl_ast_node isl_schedule isl_union_map isl_ast_expr_list isl_ast_expr_type isl_ast_node_list isl_ast_node_type isl_id_to_ast_expr isl_ast_expr_op_type isl_ast_print_options
+# Importing /path/to/nim-isl/isl/include/isl/ctx.h
+# /<$USER>/.nimble/pkgs/nimterop-0.1.0/nimterop/toast --pnim --preprocess --includeDirs+=/path/to/nim-isl/isl --includeDirs+=/path/to/nim-isl/isl/include --includeDirs+=/path/to/nim-isl/isl/imath_wrap --symOverride=isl_options,isl_args,isl_map,isl_basic_map,isl_set_type,isl_set,isl_basic_set,isl_map_list,isl_basic_map_list,isl_set_list,isl_basic_set_list,isl_aff_list,isl_dim_type,isl_space,isl_printer,isl_pw_aff,isl_pw_multi_aff,isl_multi_pw_aff,isl_multi_aff,isl_aff,isl_point,isl_fixed_box,isl_local_space,isl_stride_info,isl_id,isl_val,isl_mat,isl_id_list,isl_ast_expr,isl_ast_node,isl_schedule,isl_union_map,isl_ast_expr_list,isl_ast_expr_type,isl_ast_node_list,isl_ast_node_type,isl_id_to_ast_expr,isl_ast_expr_op_type,isl_ast_print_options /path/to/nim-isl/isl/include/isl/ctx.h
 
 {.experimental: "codeReordering".}
 {.hint[ConvFromXtoItselfNotNeeded]: off.}
@@ -16,7 +17,7 @@ defineEnum(isl_error)
 defineEnum(isl_stat)
 defineEnum(isl_bool)
 const
-  headerctx {.used.} = "path/to/nim-isl/isl/include/isl/ctx.h"
+  headerctx {.used.} = "/path/to/nim-isl/isl/include/isl/ctx.h"
   isl_error_none* = (0).isl_error
   isl_error_abort* = 1.isl_error
   isl_error_alloc* = 2.isl_error
@@ -72,8 +73,8 @@ proc isl_ctx_last_error_line*(ctx: ptr isl_ctx): cint {.importc, header: headerc
 proc isl_ctx_reset_error*(ctx: ptr isl_ctx) {.importc, header: headerctx.}
 proc isl_ctx_set_error*(ctx: ptr isl_ctx; error: isl_error) {.importc,
     header: headerctx.}
-# Importing path/to/nim-isl/isl/include/isl/map.h
-# <USER>/.nimble/pkgs/nimterop-0.1.0/nimterop/toast --pnim --preprocess --includeDirs+=path/to/nim-isl/isl --includeDirs+=path/to/nim-isl/isl/include --includeDirs+=path/to/nim-isl/isl/imath_wrap --symOverride=isl_options,isl_args,isl_map,isl_basic_map,isl_set_type,isl_set,isl_basic_set,isl_map_list,isl_basic_map_list,isl_set_list,isl_basic_set_list,isl_aff_list,isl_dim_type,isl_space,isl_printer,isl_pw_aff,isl_pw_multi_aff,isl_multi_pw_aff,isl_multi_aff,isl_aff,isl_point,isl_fixed_box,isl_local_space,isl_stride_info,isl_id,isl_val,isl_mat path/to/nim-isl/isl/include/isl/map.h
+# Importing /path/to/nim-isl/isl/include/isl/map.h
+# /<$USER>/.nimble/pkgs/nimterop-0.1.0/nimterop/toast --pnim --preprocess --includeDirs+=/path/to/nim-isl/isl --includeDirs+=/path/to/nim-isl/isl/include --includeDirs+=/path/to/nim-isl/isl/imath_wrap --symOverride=isl_options,isl_args,isl_map,isl_basic_map,isl_set_type,isl_set,isl_basic_set,isl_map_list,isl_basic_map_list,isl_set_list,isl_basic_set_list,isl_aff_list,isl_dim_type,isl_space,isl_printer,isl_pw_aff,isl_pw_multi_aff,isl_multi_pw_aff,isl_multi_aff,isl_aff,isl_point,isl_fixed_box,isl_local_space,isl_stride_info,isl_id,isl_val,isl_mat,isl_id_list,isl_ast_expr,isl_ast_node,isl_schedule,isl_union_map,isl_ast_expr_list,isl_ast_expr_type,isl_ast_node_list,isl_ast_node_type,isl_id_to_ast_expr,isl_ast_expr_op_type,isl_ast_print_options /path/to/nim-isl/isl/include/isl/map.h
 
 {.experimental: "codeReordering".}
 {.hint[ConvFromXtoItselfNotNeeded]: off.}
@@ -81,7 +82,7 @@ import
   nimterop / types
 
 const
-  headermap {.used.} = "path/to/nim-isl/isl/include/isl/map.h"
+  headermap {.used.} = "/path/to/nim-isl/isl/include/isl/map.h"
 proc isl_basic_map_total_dim*(bmap: ptr isl_basic_map): isl_size {.importc,
     header: headermap.}
 proc isl_basic_map_dim*(bmap: ptr isl_basic_map; `type`: isl_dim_type): isl_size {.
@@ -762,8 +763,8 @@ proc isl_map_list_to_str*(list: ptr isl_map_list): cstring {.importc,
 proc isl_printer_print_map_list*(p: ptr isl_printer; list: ptr isl_map_list): ptr isl_printer {.
     importc, header: headermap.}
 proc isl_map_list_dump*(list: ptr isl_map_list) {.importc, header: headermap.}
-# Importing path/to/nim-isl/isl/include/isl/set.h
-# <USER>/.nimble/pkgs/nimterop-0.1.0/nimterop/toast --pnim --preprocess --includeDirs+=path/to/nim-isl/isl --includeDirs+=path/to/nim-isl/isl/include --includeDirs+=path/to/nim-isl/isl/imath_wrap --symOverride=isl_options,isl_args,isl_map,isl_basic_map,isl_set_type,isl_set,isl_basic_set,isl_map_list,isl_basic_map_list,isl_set_list,isl_basic_set_list,isl_aff_list,isl_dim_type,isl_space,isl_printer,isl_pw_aff,isl_pw_multi_aff,isl_multi_pw_aff,isl_multi_aff,isl_aff,isl_point,isl_fixed_box,isl_local_space,isl_stride_info,isl_id,isl_val,isl_mat path/to/nim-isl/isl/include/isl/set.h
+# Importing /path/to/nim-isl/isl/include/isl/set.h
+# /<$USER>/.nimble/pkgs/nimterop-0.1.0/nimterop/toast --pnim --preprocess --includeDirs+=/path/to/nim-isl/isl --includeDirs+=/path/to/nim-isl/isl/include --includeDirs+=/path/to/nim-isl/isl/imath_wrap --symOverride=isl_options,isl_args,isl_map,isl_basic_map,isl_set_type,isl_set,isl_basic_set,isl_map_list,isl_basic_map_list,isl_set_list,isl_basic_set_list,isl_aff_list,isl_dim_type,isl_space,isl_printer,isl_pw_aff,isl_pw_multi_aff,isl_multi_pw_aff,isl_multi_aff,isl_aff,isl_point,isl_fixed_box,isl_local_space,isl_stride_info,isl_id,isl_val,isl_mat,isl_id_list,isl_ast_expr,isl_ast_node,isl_schedule,isl_union_map,isl_ast_expr_list,isl_ast_expr_type,isl_ast_node_list,isl_ast_node_type,isl_id_to_ast_expr,isl_ast_expr_op_type,isl_ast_print_options /path/to/nim-isl/isl/include/isl/set.h
 
 {.experimental: "codeReordering".}
 {.hint[ConvFromXtoItselfNotNeeded]: off.}
@@ -771,7 +772,7 @@ import
   nimterop / types
 
 const
-  headerset {.used.} = "path/to/nim-isl/isl/include/isl/set.h"
+  headerset {.used.} = "/path/to/nim-isl/isl/include/isl/set.h"
 proc isl_basic_set_n_dim*(bset: ptr isl_basic_set): isl_size {.importc,
     header: headerset.}
 proc isl_basic_set_n_param*(bset: ptr isl_basic_set): isl_size {.importc,
@@ -1236,167 +1237,451 @@ proc isl_set_dim_min*(set: ptr isl_set; pos: cint): ptr isl_pw_aff {.importc,
 proc isl_basic_set_to_str*(bset: ptr isl_basic_set): cstring {.importc,
     header: headerset.}
 proc isl_set_to_str*(set: ptr isl_set): cstring {.importc, header: headerset.}
-
-{.compile: "path/to/nim-isl/isl/isl_imath.c".}
-
-{.compile: "path/to/nim-isl/isl/imath_wrap/gmp_compat.c".}
-
-{.compile: "path/to/nim-isl/isl/imath_wrap/imath.c".}
-
-{.compile: "path/to/nim-isl/isl/imath_wrap/imrat.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_int_sioimath.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_val_sioimath.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_aff.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_aff_map.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_affine_hull.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_arg.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_ast.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_ast_build.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_ast_build_expr.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_ast_codegen.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_ast_graft.c".}
-
-{.compile: "path/to/nim-isl/isl/basis_reduction_tab.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_bernstein.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_blk.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_bound.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_box.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_coalesce.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_constraint.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_convex_hull.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_ctx.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_deprecated.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_dim_map.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_equalities.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_factorization.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_farkas.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_ffs.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_flow.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_fold.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_hash.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_id_to_ast_expr.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_id_to_id.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_id_to_pw_aff.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_ilp.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_input.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_local.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_local_space.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_lp.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_map.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_map_list.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_map_simplify.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_map_subtract.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_map_to_basic_set.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_mat.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_morph.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_id.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_obj.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_options.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_output.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_point.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_polynomial.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_printer.c".}
-
-{.compile: "path/to/nim-isl/isl/print.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_range.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_reordering.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_sample.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_scan.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_schedule.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_schedule_band.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_schedule_node.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_schedule_read.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_schedule_tree.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_schedule_constraints.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_scheduler.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_set_list.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_sort.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_space.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_stream.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_seq.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_stride.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_tab.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_tab_pip.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_tarjan.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_transitive_closure.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_union_map.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_val.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_vec.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_version.c".}
-
-{.compile: "path/to/nim-isl/isl/isl_vertices.c".}
+# Importing /path/to/nim-isl/isl/include/isl/ast_build.h
+# /<$USER>/.nimble/pkgs/nimterop-0.1.0/nimterop/toast --pnim --preprocess --includeDirs+=/path/to/nim-isl/isl --includeDirs+=/path/to/nim-isl/isl/include --includeDirs+=/path/to/nim-isl/isl/imath_wrap --symOverride=isl_options,isl_args,isl_map,isl_basic_map,isl_set_type,isl_set,isl_basic_set,isl_map_list,isl_basic_map_list,isl_set_list,isl_basic_set_list,isl_aff_list,isl_dim_type,isl_space,isl_printer,isl_pw_aff,isl_pw_multi_aff,isl_multi_pw_aff,isl_multi_aff,isl_aff,isl_point,isl_fixed_box,isl_local_space,isl_stride_info,isl_id,isl_val,isl_mat,isl_id_list,isl_ast_expr,isl_ast_node,isl_schedule,isl_union_map,isl_ast_expr_list,isl_ast_expr_type,isl_ast_node_list,isl_ast_node_type,isl_id_to_ast_expr,isl_ast_expr_op_type,isl_ast_print_options /path/to/nim-isl/isl/include/isl/ast_build.h
+
+{.experimental: "codeReordering".}
+{.hint[ConvFromXtoItselfNotNeeded]: off.}
+import
+  nimterop / types
+
+const
+  headerast_build {.used.} = "/path/to/nim-isl/isl/include/isl/ast_build.h"
+  ISL_AST_BUILD_SEPARATION_BOUNDS_EXPLICIT* = 0
+  ISL_AST_BUILD_SEPARATION_BOUNDS_IMPLICIT* = 1
+type
+  isl_ast_build* {.bycopy.} = object
+proc isl_options_set_ast_build_atomic_upper_bound*(ctx: ptr isl_ctx; val: cint): isl_stat {.
+    importc, header: headerast_build.}
+proc isl_options_get_ast_build_atomic_upper_bound*(ctx: ptr isl_ctx): cint {.importc,
+    header: headerast_build.}
+proc isl_options_set_ast_build_prefer_pdiv*(ctx: ptr isl_ctx; val: cint): isl_stat {.
+    importc, header: headerast_build.}
+proc isl_options_get_ast_build_prefer_pdiv*(ctx: ptr isl_ctx): cint {.importc,
+    header: headerast_build.}
+proc isl_options_set_ast_build_detect_min_max*(ctx: ptr isl_ctx; val: cint): isl_stat {.
+    importc, header: headerast_build.}
+proc isl_options_get_ast_build_detect_min_max*(ctx: ptr isl_ctx): cint {.importc,
+    header: headerast_build.}
+proc isl_options_set_ast_build_exploit_nested_bounds*(ctx: ptr isl_ctx; val: cint): isl_stat {.
+    importc, header: headerast_build.}
+proc isl_options_get_ast_build_exploit_nested_bounds*(ctx: ptr isl_ctx): cint {.
+    importc, header: headerast_build.}
+proc isl_options_set_ast_build_group_coscheduled*(ctx: ptr isl_ctx; val: cint): isl_stat {.
+    importc, header: headerast_build.}
+proc isl_options_get_ast_build_group_coscheduled*(ctx: ptr isl_ctx): cint {.importc,
+    header: headerast_build.}
+proc isl_options_set_ast_build_separation_bounds*(ctx: ptr isl_ctx; val: cint): isl_stat {.
+    importc, header: headerast_build.}
+proc isl_options_get_ast_build_separation_bounds*(ctx: ptr isl_ctx): cint {.importc,
+    header: headerast_build.}
+proc isl_options_set_ast_build_scale_strides*(ctx: ptr isl_ctx; val: cint): isl_stat {.
+    importc, header: headerast_build.}
+proc isl_options_get_ast_build_scale_strides*(ctx: ptr isl_ctx): cint {.importc,
+    header: headerast_build.}
+proc isl_options_set_ast_build_allow_else*(ctx: ptr isl_ctx; val: cint): isl_stat {.
+    importc, header: headerast_build.}
+proc isl_options_get_ast_build_allow_else*(ctx: ptr isl_ctx): cint {.importc,
+    header: headerast_build.}
+proc isl_options_set_ast_build_allow_or*(ctx: ptr isl_ctx; val: cint): isl_stat {.
+    importc, header: headerast_build.}
+proc isl_options_get_ast_build_allow_or*(ctx: ptr isl_ctx): cint {.importc,
+    header: headerast_build.}
+proc isl_ast_build_get_ctx*(build: ptr isl_ast_build): ptr isl_ctx {.importc,
+    header: headerast_build.}
+proc isl_ast_build_alloc*(ctx: ptr isl_ctx): ptr isl_ast_build {.importc,
+    header: headerast_build.}
+proc isl_ast_build_from_context*(set: ptr isl_set): ptr isl_ast_build {.importc,
+    header: headerast_build.}
+proc isl_ast_build_get_schedule_space*(build: ptr isl_ast_build): ptr isl_space {.
+    importc, header: headerast_build.}
+proc isl_ast_build_get_schedule*(build: ptr isl_ast_build): ptr isl_union_map {.
+    importc, header: headerast_build.}
+proc isl_ast_build_restrict*(build: ptr isl_ast_build; set: ptr isl_set): ptr isl_ast_build {.
+    importc, header: headerast_build.}
+proc isl_ast_build_copy*(build: ptr isl_ast_build): ptr isl_ast_build {.importc,
+    header: headerast_build.}
+proc isl_ast_build_free*(build: ptr isl_ast_build): ptr isl_ast_build {.importc,
+    header: headerast_build.}
+proc isl_ast_build_set_options*(build: ptr isl_ast_build; options: ptr isl_union_map): ptr isl_ast_build {.
+    importc, header: headerast_build.}
+proc isl_ast_build_set_iterators*(build: ptr isl_ast_build;
+                                 iterators: ptr isl_id_list): ptr isl_ast_build {.
+    importc, header: headerast_build.}
+proc isl_ast_build_expr_from_set*(build: ptr isl_ast_build; set: ptr isl_set): ptr isl_ast_expr {.
+    importc, header: headerast_build.}
+proc isl_ast_build_expr_from_pw_aff*(build: ptr isl_ast_build; pa: ptr isl_pw_aff): ptr isl_ast_expr {.
+    importc, header: headerast_build.}
+proc isl_ast_build_access_from_pw_multi_aff*(build: ptr isl_ast_build;
+    pma: ptr isl_pw_multi_aff): ptr isl_ast_expr {.importc, header: headerast_build.}
+proc isl_ast_build_access_from_multi_pw_aff*(build: ptr isl_ast_build;
+    mpa: ptr isl_multi_pw_aff): ptr isl_ast_expr {.importc, header: headerast_build.}
+proc isl_ast_build_call_from_pw_multi_aff*(build: ptr isl_ast_build;
+    pma: ptr isl_pw_multi_aff): ptr isl_ast_expr {.importc, header: headerast_build.}
+proc isl_ast_build_call_from_multi_pw_aff*(build: ptr isl_ast_build;
+    mpa: ptr isl_multi_pw_aff): ptr isl_ast_expr {.importc, header: headerast_build.}
+proc isl_ast_build_node_from_schedule*(build: ptr isl_ast_build;
+                                      schedule: ptr isl_schedule): ptr isl_ast_node {.
+    importc, header: headerast_build.}
+proc isl_ast_build_node_from_schedule_map*(build: ptr isl_ast_build;
+    schedule: ptr isl_union_map): ptr isl_ast_node {.importc, header: headerast_build.}
+proc isl_ast_build_ast_from_schedule*(build: ptr isl_ast_build;
+                                     schedule: ptr isl_union_map): ptr isl_ast_node {.
+    importc, header: headerast_build.}
+# Importing /path/to/nim-isl/isl/include/isl/ast.h
+# /<$USER>/.nimble/pkgs/nimterop-0.1.0/nimterop/toast --pnim --preprocess --includeDirs+=/path/to/nim-isl/isl --includeDirs+=/path/to/nim-isl/isl/include --includeDirs+=/path/to/nim-isl/isl/imath_wrap --symOverride=isl_options,isl_args,isl_map,isl_basic_map,isl_set_type,isl_set,isl_basic_set,isl_map_list,isl_basic_map_list,isl_set_list,isl_basic_set_list,isl_aff_list,isl_dim_type,isl_space,isl_printer,isl_pw_aff,isl_pw_multi_aff,isl_multi_pw_aff,isl_multi_aff,isl_aff,isl_point,isl_fixed_box,isl_local_space,isl_stride_info,isl_id,isl_val,isl_mat,isl_id_list,isl_ast_expr,isl_ast_node,isl_schedule,isl_union_map,isl_ast_expr_list,isl_ast_expr_type,isl_ast_node_list,isl_ast_node_type,isl_id_to_ast_expr,isl_ast_expr_op_type,isl_ast_print_options /path/to/nim-isl/isl/include/isl/ast.h
+
+{.experimental: "codeReordering".}
+{.hint[ConvFromXtoItselfNotNeeded]: off.}
+import
+  nimterop / types
+
+const
+  headerast {.used.} = "/path/to/nim-isl/isl/include/isl/ast.h"
+proc isl_options_set_ast_iterator_type*(ctx: ptr isl_ctx; val: cstring): isl_stat {.
+    importc, header: headerast.}
+proc isl_options_get_ast_iterator_type*(ctx: ptr isl_ctx): cstring {.importc,
+    header: headerast.}
+proc isl_options_set_ast_always_print_block*(ctx: ptr isl_ctx; val: cint): isl_stat {.
+    importc, header: headerast.}
+proc isl_options_get_ast_always_print_block*(ctx: ptr isl_ctx): cint {.importc,
+    header: headerast.}
+proc isl_ast_expr_from_val*(v: ptr isl_val): ptr isl_ast_expr {.importc,
+    header: headerast.}
+proc isl_ast_expr_from_id*(id: ptr isl_id): ptr isl_ast_expr {.importc,
+    header: headerast.}
+proc isl_ast_expr_neg*(expr: ptr isl_ast_expr): ptr isl_ast_expr {.importc,
+    header: headerast.}
+proc isl_ast_expr_add*(expr1: ptr isl_ast_expr; expr2: ptr isl_ast_expr): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_ast_expr_sub*(expr1: ptr isl_ast_expr; expr2: ptr isl_ast_expr): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_ast_expr_mul*(expr1: ptr isl_ast_expr; expr2: ptr isl_ast_expr): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_ast_expr_div*(expr1: ptr isl_ast_expr; expr2: ptr isl_ast_expr): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_ast_expr_pdiv_q*(expr1: ptr isl_ast_expr; expr2: ptr isl_ast_expr): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_ast_expr_pdiv_r*(expr1: ptr isl_ast_expr; expr2: ptr isl_ast_expr): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_ast_expr_and*(expr1: ptr isl_ast_expr; expr2: ptr isl_ast_expr): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_ast_expr_and_then*(expr1: ptr isl_ast_expr; expr2: ptr isl_ast_expr): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_ast_expr_or*(expr1: ptr isl_ast_expr; expr2: ptr isl_ast_expr): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_ast_expr_or_else*(expr1: ptr isl_ast_expr; expr2: ptr isl_ast_expr): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_ast_expr_le*(expr1: ptr isl_ast_expr; expr2: ptr isl_ast_expr): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_ast_expr_lt*(expr1: ptr isl_ast_expr; expr2: ptr isl_ast_expr): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_ast_expr_ge*(expr1: ptr isl_ast_expr; expr2: ptr isl_ast_expr): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_ast_expr_gt*(expr1: ptr isl_ast_expr; expr2: ptr isl_ast_expr): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_ast_expr_eq*(expr1: ptr isl_ast_expr; expr2: ptr isl_ast_expr): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_ast_expr_access*(array: ptr isl_ast_expr; indices: ptr isl_ast_expr_list): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_ast_expr_call*(function: ptr isl_ast_expr; arguments: ptr isl_ast_expr_list): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_ast_expr_address_of*(expr: ptr isl_ast_expr): ptr isl_ast_expr {.importc,
+    header: headerast.}
+proc isl_ast_expr_copy*(expr: ptr isl_ast_expr): ptr isl_ast_expr {.importc,
+    header: headerast.}
+proc isl_ast_expr_free*(expr: ptr isl_ast_expr): ptr isl_ast_expr {.importc,
+    header: headerast.}
+proc isl_ast_expr_get_ctx*(expr: ptr isl_ast_expr): ptr isl_ctx {.importc,
+    header: headerast.}
+proc isl_ast_expr_get_type*(expr: ptr isl_ast_expr): isl_ast_expr_type {.importc,
+    header: headerast.}
+proc isl_ast_expr_int_get_val*(expr: ptr isl_ast_expr): ptr isl_val {.importc,
+    header: headerast.}
+proc isl_ast_expr_get_val*(expr: ptr isl_ast_expr): ptr isl_val {.importc,
+    header: headerast.}
+proc isl_ast_expr_id_get_id*(expr: ptr isl_ast_expr): ptr isl_id {.importc,
+    header: headerast.}
+proc isl_ast_expr_get_id*(expr: ptr isl_ast_expr): ptr isl_id {.importc,
+    header: headerast.}
+proc isl_ast_expr_op_get_type*(expr: ptr isl_ast_expr): isl_ast_expr_op_type {.
+    importc, header: headerast.}
+proc isl_ast_expr_get_op_type*(expr: ptr isl_ast_expr): isl_ast_expr_op_type {.
+    importc, header: headerast.}
+proc isl_ast_expr_op_get_n_arg*(expr: ptr isl_ast_expr): isl_size {.importc,
+    header: headerast.}
+proc isl_ast_expr_get_op_n_arg*(expr: ptr isl_ast_expr): isl_size {.importc,
+    header: headerast.}
+proc isl_ast_expr_op_get_arg*(expr: ptr isl_ast_expr; pos: cint): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_ast_expr_get_op_arg*(expr: ptr isl_ast_expr; pos: cint): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_ast_expr_set_op_arg*(expr: ptr isl_ast_expr; pos: cint; arg: ptr isl_ast_expr): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_ast_expr_is_equal*(expr1: ptr isl_ast_expr; expr2: ptr isl_ast_expr): isl_bool {.
+    importc, header: headerast.}
+proc isl_ast_expr_substitute_ids*(expr: ptr isl_ast_expr;
+                                 id2expr: ptr isl_id_to_ast_expr): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_printer_print_ast_expr*(p: ptr isl_printer; expr: ptr isl_ast_expr): ptr isl_printer {.
+    importc, header: headerast.}
+proc isl_ast_expr_dump*(expr: ptr isl_ast_expr) {.importc, header: headerast.}
+proc isl_ast_expr_to_str*(expr: ptr isl_ast_expr): cstring {.importc,
+    header: headerast.}
+proc isl_ast_expr_to_C_str*(expr: ptr isl_ast_expr): cstring {.importc,
+    header: headerast.}
+proc isl_ast_node_alloc_user*(expr: ptr isl_ast_expr): ptr isl_ast_node {.importc,
+    header: headerast.}
+proc isl_ast_node_copy*(node: ptr isl_ast_node): ptr isl_ast_node {.importc,
+    header: headerast.}
+proc isl_ast_node_free*(node: ptr isl_ast_node): ptr isl_ast_node {.importc,
+    header: headerast.}
+proc isl_ast_node_get_ctx*(node: ptr isl_ast_node): ptr isl_ctx {.importc,
+    header: headerast.}
+proc isl_ast_node_get_type*(node: ptr isl_ast_node): isl_ast_node_type {.importc,
+    header: headerast.}
+proc isl_ast_node_set_annotation*(node: ptr isl_ast_node; annotation: ptr isl_id): ptr isl_ast_node {.
+    importc, header: headerast.}
+proc isl_ast_node_get_annotation*(node: ptr isl_ast_node): ptr isl_id {.importc,
+    header: headerast.}
+proc isl_ast_node_for_get_iterator*(node: ptr isl_ast_node): ptr isl_ast_expr {.
+    importc, header: headerast.}
+proc isl_ast_node_for_get_init*(node: ptr isl_ast_node): ptr isl_ast_expr {.importc,
+    header: headerast.}
+proc isl_ast_node_for_get_cond*(node: ptr isl_ast_node): ptr isl_ast_expr {.importc,
+    header: headerast.}
+proc isl_ast_node_for_get_inc*(node: ptr isl_ast_node): ptr isl_ast_expr {.importc,
+    header: headerast.}
+proc isl_ast_node_for_get_body*(node: ptr isl_ast_node): ptr isl_ast_node {.importc,
+    header: headerast.}
+proc isl_ast_node_for_is_degenerate*(node: ptr isl_ast_node): isl_bool {.importc,
+    header: headerast.}
+proc isl_ast_node_if_get_cond*(node: ptr isl_ast_node): ptr isl_ast_expr {.importc,
+    header: headerast.}
+proc isl_ast_node_if_get_then_node*(node: ptr isl_ast_node): ptr isl_ast_node {.
+    importc, header: headerast.}
+proc isl_ast_node_if_get_then*(node: ptr isl_ast_node): ptr isl_ast_node {.importc,
+    header: headerast.}
+proc isl_ast_node_if_has_else_node*(node: ptr isl_ast_node): isl_bool {.importc,
+    header: headerast.}
+proc isl_ast_node_if_has_else*(node: ptr isl_ast_node): isl_bool {.importc,
+    header: headerast.}
+proc isl_ast_node_if_get_else_node*(node: ptr isl_ast_node): ptr isl_ast_node {.
+    importc, header: headerast.}
+proc isl_ast_node_if_get_else*(node: ptr isl_ast_node): ptr isl_ast_node {.importc,
+    header: headerast.}
+proc isl_ast_node_block_get_children*(node: ptr isl_ast_node): ptr isl_ast_node_list {.
+    importc, header: headerast.}
+proc isl_ast_node_mark_get_id*(node: ptr isl_ast_node): ptr isl_id {.importc,
+    header: headerast.}
+proc isl_ast_node_mark_get_node*(node: ptr isl_ast_node): ptr isl_ast_node {.importc,
+    header: headerast.}
+proc isl_ast_node_user_get_expr*(node: ptr isl_ast_node): ptr isl_ast_expr {.importc,
+    header: headerast.}
+proc isl_printer_print_ast_node*(p: ptr isl_printer; node: ptr isl_ast_node): ptr isl_printer {.
+    importc, header: headerast.}
+proc isl_ast_node_dump*(node: ptr isl_ast_node) {.importc, header: headerast.}
+proc isl_ast_node_to_str*(node: ptr isl_ast_node): cstring {.importc,
+    header: headerast.}
+proc isl_ast_print_options_alloc*(ctx: ptr isl_ctx): ptr isl_ast_print_options {.
+    importc, header: headerast.}
+proc isl_ast_print_options_copy*(options: ptr isl_ast_print_options): ptr isl_ast_print_options {.
+    importc, header: headerast.}
+proc isl_ast_print_options_free*(options: ptr isl_ast_print_options): ptr isl_ast_print_options {.
+    importc, header: headerast.}
+proc isl_ast_print_options_get_ctx*(options: ptr isl_ast_print_options): ptr isl_ctx {.
+    importc, header: headerast.}
+proc isl_options_set_ast_print_macro_once*(ctx: ptr isl_ctx; val: cint): isl_stat {.
+    importc, header: headerast.}
+proc isl_options_get_ast_print_macro_once*(ctx: ptr isl_ctx): cint {.importc,
+    header: headerast.}
+proc isl_ast_expr_op_type_set_print_name*(p: ptr isl_printer;
+    `type`: isl_ast_expr_op_type; name: cstring): ptr isl_printer {.importc,
+    header: headerast.}
+proc isl_ast_op_type_set_print_name*(p: ptr isl_printer;
+                                    `type`: isl_ast_expr_op_type; name: cstring): ptr isl_printer {.
+    importc, header: headerast.}
+proc isl_ast_expr_op_type_print_macro*(`type`: isl_ast_expr_op_type;
+                                      p: ptr isl_printer): ptr isl_printer {.importc,
+    header: headerast.}
+proc isl_ast_op_type_print_macro*(`type`: isl_ast_expr_op_type; p: ptr isl_printer): ptr isl_printer {.
+    importc, header: headerast.}
+proc isl_ast_expr_print_macros*(expr: ptr isl_ast_expr; p: ptr isl_printer): ptr isl_printer {.
+    importc, header: headerast.}
+proc isl_ast_node_print_macros*(node: ptr isl_ast_node; p: ptr isl_printer): ptr isl_printer {.
+    importc, header: headerast.}
+proc isl_ast_node_print*(node: ptr isl_ast_node; p: ptr isl_printer;
+                        options: ptr isl_ast_print_options): ptr isl_printer {.
+    importc, header: headerast.}
+proc isl_ast_node_for_print*(node: ptr isl_ast_node; p: ptr isl_printer;
+                            options: ptr isl_ast_print_options): ptr isl_printer {.
+    importc, header: headerast.}
+proc isl_ast_node_if_print*(node: ptr isl_ast_node; p: ptr isl_printer;
+                           options: ptr isl_ast_print_options): ptr isl_printer {.
+    importc, header: headerast.}
+proc isl_ast_node_to_C_str*(node: ptr isl_ast_node): cstring {.importc,
+    header: headerast.}
+
+{.compile: "/path/to/nim-isl/isl/isl_imath.c".}
+
+{.compile: "/path/to/nim-isl/isl/imath_wrap/gmp_compat.c".}
+
+{.compile: "/path/to/nim-isl/isl/imath_wrap/imath.c".}
+
+{.compile: "/path/to/nim-isl/isl/imath_wrap/imrat.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_int_sioimath.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_val_sioimath.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_aff.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_aff_map.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_affine_hull.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_arg.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_ast.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_ast_build.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_ast_build_expr.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_ast_codegen.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_ast_graft.c".}
+
+{.compile: "/path/to/nim-isl/isl/basis_reduction_tab.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_bernstein.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_blk.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_bound.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_box.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_coalesce.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_constraint.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_convex_hull.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_ctx.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_deprecated.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_dim_map.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_equalities.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_factorization.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_farkas.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_ffs.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_flow.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_fold.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_hash.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_id_to_ast_expr.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_id_to_id.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_id_to_pw_aff.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_ilp.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_input.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_local.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_local_space.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_lp.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_map.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_map_list.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_map_simplify.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_map_subtract.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_map_to_basic_set.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_mat.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_morph.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_id.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_obj.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_options.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_output.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_point.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_polynomial.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_printer.c".}
+
+{.compile: "/path/to/nim-isl/isl/print.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_range.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_reordering.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_sample.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_scan.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_schedule.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_schedule_band.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_schedule_node.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_schedule_read.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_schedule_tree.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_schedule_constraints.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_scheduler.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_set_list.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_sort.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_space.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_stream.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_seq.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_stride.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_tab.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_tab_pip.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_tarjan.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_transitive_closure.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_union_map.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_val.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_vec.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_version.c".}
+
+{.compile: "/path/to/nim-isl/isl/isl_vertices.c".}
