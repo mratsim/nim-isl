@@ -1,12 +1,14 @@
 import nimterop/cimport
 
-import strutils
-from os import DirSep, walkFiles
 
-const cSourcesPath = currentSourcePath.rsplit(DirSep, 1)[0]
+when false: # Configure the project, only needed once
+  import strutils
+  from os import DirSep, walkFiles
+  static:
+    const cSourcesPath = currentSourcePath.rsplit(DirSep, 1)[0]
+    echo staticExec(cSourcesPath & "/isl_configure.sh")
 
 static:
-  # echo staticExec(cSourcesPath & "/isl_configure.sh")
   cDebug()
   cAddStdDir()
 
