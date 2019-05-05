@@ -60,11 +60,18 @@ cOverride:
     isl_id_to_ast_expr {.importc, header: cHeaderPath & "ast_type.h".} = object
     isl_ast_expr_op_type {.importc, header: cHeaderPath & "ast_type.h".} = object
     isl_ast_print_options {.importc, header: cHeaderPath & "ast_type.h".} = object
+    isl_union_map_list {.importc, header: cHeaderPath & "list.h".} = object
+    isl_union_set_list {.importc, header: cHeaderPath & "list.h".} = object
+    isl_union_set {.importc, header: cHeaderPath & "set_type.h".} = object
+    isl_union_pw_multi_aff {.importc, header: cHeaderPath & "aff.h".} = object
+    isl_multi_union_pw_aff {.importc, header: cHeaderPath & "aff.h".} = object
 
 # Nim interface
 cImport(cHeaderPath & "ctx.h", false)
-cImport(cHeaderPath & "map.h", false)
 cImport(cHeaderPath & "set.h", false)
+cImport(cHeaderPath & "union_set.h", false)
+cImport(cHeaderPath & "map.h", false)
+cImport(cHeaderPath & "union_map.h", false)
 cImport(cHeaderPath & "ast_build.h", false)
 cImport(cHeaderPath & "ast.h", false)
 
