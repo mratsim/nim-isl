@@ -9,9 +9,10 @@ Original project:
   - http://isl.gforge.inria.fr
   - https://repo.or.cz/w/isl.git
 
-ISL is the backend of most modern polyhedral compilers include GCC Graphite and LLVM Polly.
+ISL is the backend of most modern polyhedral compilers include GCC Graphite and LLVM Polly. The polyhedral compilation models loop constraints (iterator intervals and data access) as an integer linear programming problem to optimize. This helps rescheduling instructions
+  in different orders without breaking their dependencies.
 
-ISL is based on [Presburger arithmetic](https://en.wikipedia.org/wiki/Presburger_arithmetic), i.e.,
+ISL is based on [Presburger arithmetic](https://en.wikipedia.org/wiki/Presburger_arithmetic), i.e.
 natural number arithmetic with addition and equality and no multiplication.
 
 ## Intended audience warning
