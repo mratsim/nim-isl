@@ -50,7 +50,7 @@ cOverride:
     isl_mat {.importc, header: cHeaderPath & "mat.h".} = object
     isl_id_list {.importc, header: cHeaderPath & "list.h".} = object
     isl_ast_expr {.importc, header: cHeaderPath & "ast_type.h".} = object
-    isl_ast_node {.importc, header: cHeaderPath & "ast_type.h".} = object
+    isl_ast_node* {.importc, header: cHeaderPath & "ast_type.h".} = object
     isl_schedule {.importc, header: cHeaderPath & "schedule_type.h".} = object
     isl_union_map* {.importc, header: cHeaderPath & "union_map_type.h".} = object
     isl_ast_expr_list {.importc, header: cHeaderPath & "ast_type.h".} = object
@@ -66,14 +66,29 @@ cOverride:
     isl_union_pw_multi_aff {.importc, header: cHeaderPath & "aff.h".} = object
     isl_multi_union_pw_aff {.importc, header: cHeaderPath & "aff.h".} = object
 
+    OutputFormat*{.size: sizeof(cint).} = enum
+      FmtISL = 0
+      FmtPolylib = 1
+      FmtPolylibConstraints = 2
+      FmtOmega = 3
+      FmtC = 4
+      FmtLatex = 5
+      FmtExtPolylib = 6
+
+  proc isl_printer_set_output_format*(
+      p: ptr isl_printer,
+      output_format: OutputFormat
+    ) {.importc, header: cHeaderPath & "printer.h".}
+
 # Nim interface
 cImport(cHeaderPath & "ctx.h", false)
 cImport(cHeaderPath & "set.h", false)
+cImport(cHeaderPath & "ast.h", false)
 cImport(cHeaderPath & "union_set.h", false)
 cImport(cHeaderPath & "map.h", false)
 cImport(cHeaderPath & "union_map.h", false)
 cImport(cHeaderPath & "ast_build.h", false)
-cImport(cHeaderPath & "ast.h", false)
+cImport(cHeaderPath & "printer.h", false)
 
 # See Makefile.am
 # Multiprecision
